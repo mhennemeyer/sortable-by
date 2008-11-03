@@ -1,0 +1,32 @@
+= Sortable By
+
+by Matthias Hennemeyer <mhennemeyer@gmail.com>
+
+== Introduction
+
+Rails Plugin.
+Make Collections of ActiveRecord Models sortable by a specified attribute.
+
+== Usage
+
+Just declare it inside the model: (Model should have a price attribute in this case)
+    class Model < ActiveRecord::Base
+      sortable_by :price
+    end
+    Use it by calling sort:
+    @models = [
+      Model.create(:price => 5),
+      Model.create(:price => 1),
+      Model.create(:price => 3),
+      Model.create(:price => 12),
+      Model.create(:price => 7)
+    ].sort.map(&:price) 
+    # => [1,3,5,7,12]
+
+  
+== INSTALL:
+
+  $ ruby script/plugin install git://github.com/mhennemeyer/sortable-by.git
+
+
+Copyright (c) 2008 Matthias Hennemeyer, released under the MIT license
