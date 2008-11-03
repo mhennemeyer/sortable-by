@@ -1,1 +1,1 @@
-require 'lib/sortable_by.rb'
+require 'sortable_by.rb'
